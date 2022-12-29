@@ -1,5 +1,5 @@
 import scrapy
-
+from douban.items import DoubanItem
 
 class DoubanspiderSpider(scrapy.Spider):
     name = 'doubanspider'
@@ -8,4 +8,7 @@ class DoubanspiderSpider(scrapy.Spider):
 
     def parse(self, response):
         # 解析
-        return response.json()
+        item = DoubanItem()
+        item['content'] = response.json()
+        # return response.json()
+        yield item
