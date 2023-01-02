@@ -1,12 +1,25 @@
 import requests
+import json
+from pathlib import Path
 
-song_name = '常山来将 小魂'
-url = f'https://complexsearch.kugou.com/v2/search/song?callback=callback123&srcappid=2919&clientver=1000&clienttime=1672581391634&mid=2ae230a2b5f1d2dad186440a250ac60d&uuid=2ae230a2b5f1d2dad186440a250ac60d&dfid=3exuAM3kLAf442bQSl2Tukfs&keyword={song_name}&page=1&pagesize=30&bitrate=0&isfuzzy=0&inputtype=0&platform=WebFilter&userid=0&iscorrection=1&privilege_filter=0&filter=10&token=&appid=1014&signature=aec77de4d61ed92a53f295b861624825'
-# uri = 'https://complexsearch.kugou.com/v2/search/song?callback=callback123&srcappid=2919&clientver=1000&clienttime=1672581770608&mid=2ae230a2b5f1d2dad186440a250ac60d&uuid=2ae230a2b5f1d2dad186440a250ac60d&dfid=3exuAM3kLAf442bQSl2Tukfs&keyword=%E4%B8%80%E7%9C%BC%E4%B8%87%E5%B9%B4                        &page=1&pagesize=30&bitrate=0&isfuzzy=0&inputtype=0&platform=WebFilter&userid=0&iscorrection=1&privilege_filter=0&filter=10&token=&appid=1014&signature=db02d8de6811b759816f1cd21f7a27ae'
-url2 = 'https://wwwapi.kugou.com/yy/index.php?r=play/getdata&callback=jQuery19109804503544324801_1672582414754&dfid=3exuAM3kLAf442bQSl2Tukfs&appid=1014&mid=2ae230a2b5f1d2dad186440a250ac60d&platid=4&encode_album_audio_id=4fvckbfe&_=1672582414755'
-
-# res = requests.get(url)
-# print(res.text)
-res = requests.get(url2)
-res.encoding = 'utf-8'
-print(res.text)
+# 音乐列表
+list_url = 'https://complexsearch.kugou.com/v2/search/song?callback=callback123&srcappid=2919&clientver=1000&clienttime=1672627750637&mid=2ae230a2b5f1d2dad186440a250ac60d&uuid=2ae230a2b5f1d2dad186440a250ac60d&dfid=3exuAM3kLAf442bQSl2Tukfs&keyword=%E5%A4%A7%E9%B1%BC&page=1&pagesize=30&bitrate=0&isfuzzy=0&inputtype=0&platform=WebFilter&userid=0&iscorrection=1&privilege_filter=0&filter=10&token=&appid=1014&signature=59f1d801736313c914eb34fd2cff9f12'
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+}
+list_resp = requests.get(url=list_url, headers=headers)
+song_list = json.loads(list_resp.text[12:-2]).get('data').get('lists')
+for i, s in enumerate(song_list):
+    print(f"{i+1}-----{s.get('SongName')}----{s.get('FileHash')}----{s.get('EMixSongID')}")
+url = 'https://wwwapi.kugou.com/yy/index.php?r=play/getdata&callback=jQuery19103775226882264948_1672626004012&dfid=3exuAM3kLAf442bQSl2Tukfs&appid=1014&mid=2ae230a2b5f1d2dad186440a250ac60d&platid=4&encode_album_audio_id=n0800ae&_=1672626004013'
+# headers = {
+#     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+# }
+# data = requests.get(url, headers=headers).text
+# print(data)
+# url = 'https://webfs.ali.kugou.com/202301021018/6200bb0ee38ad974a23060fb59c5aba8/part/0/960111/KGTX/CLTX001/clip_bfbdd3df47727b701d4480ea36a8f73b.mp3'
+# current_path = Path(__file__).parent
+# song_path = Path(current_path, '大鱼.mp3')
+# content = requests.get(url, headers=headers).content
+# with open(song_path, 'wb') as f:
+#     f.write(content)
