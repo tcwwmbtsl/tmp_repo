@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 # coding=utf-8
+
+from collections.abc import Iterable, Iterator
+
+
 # 自定义类实现迭代器
 class SelfListIterable:
 
@@ -27,5 +31,7 @@ mylist = SelfListIterable()
 mylist.add(23)
 mylist.add(45)
 
-# print("mylist是否是迭代器: %s" % (isinstance(mylist, Itertor)))
-# print('mylist 是否是可迭代对象：%s' % (isinstance(mylist, Iterable)))
+# 注：在Python3.10 版本中移除了 from collections import Iterable,Iterator 改为 from collections.abc import Iterable,Iterator
+
+print("mylist是否是迭代器: %s" % (isinstance(mylist, Iterator)))
+print('mylist 是否是可迭代对象：%s' % (isinstance(mylist, Iterable)))
