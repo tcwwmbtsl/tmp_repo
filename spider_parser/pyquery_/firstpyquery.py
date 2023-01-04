@@ -2,8 +2,9 @@
 # coding=utf-8
 
 import pyquery
-from pyquery import PyQuery as pq 
-from pathlib import Path 
+from pyquery import PyQuery as pq
+from pathlib import Path
+
 html = '''
 <div>
     <ul>
@@ -37,5 +38,3 @@ print(doc('title'))
 #html_path = Path(Path(__file__).parent, 'demo.html')
 doc = pq(filename='demo.html')
 print(doc('head'))
-
-

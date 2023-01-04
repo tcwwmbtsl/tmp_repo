@@ -1,4 +1,5 @@
 from pyquery import PyQuery as pq
+
 html = '''
 <div id="panel">
     <ul class="list1">
@@ -33,6 +34,8 @@ print(result.text())
 # 整个节点的HTML 代码
 from lxml import etree
 
-print(str(etree.tostring(result[0],  pretty_print=True, encoding='utf-8'), 'utf-8'))
+print(
+    str(etree.tostring(result[0], pretty_print=True, encoding='utf-8'),
+        'utf-8'))
 # 节点内部的html 代码
 print(result.html())

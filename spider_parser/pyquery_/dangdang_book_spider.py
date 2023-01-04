@@ -1,6 +1,7 @@
-from pyquery import PyQuery as pq 
+from pyquery import PyQuery as pq
 import requests
-import time 
+import time
+
 
 # 用于下载指定的url 页面
 def get_one_page(url):
@@ -10,8 +11,9 @@ def get_one_page(url):
             return res.text
         return None
     except Exception:
-        return None 
-    
+        return None
+
+
 def parse_one_page(html):
     doc = pq(html)
     # 提取当前 li 节点的 ul 节点
@@ -41,19 +43,24 @@ def parse_one_page(html):
         comment_number = li('.search_comment_num').text()[:-3]
         # 获取图书简介
         detail = li('.detail').text()
-        
+
         yield {
-            'href':href,
+            'href': href,
             'title': title,
-            'price':price,
+            'price': price,
             'author': author,
             'date': date,
             'publisher': publisher,
-            'comment_number':comment_number,
+            'comment_number': comment_number,
             'detail': detail
         }
+
+
 if __name__ == "__main__":
-    urls = ['http://search.dangdang.com/?key=pthon&act=input&page_index={}'.format(str(i)) for i in range(1,2)]
+    urls = [
+        'http://search.dangdang.com/?key=pthon&act=input&page_index={}'.format(
+            str(i)) for i in range(1, 2)
+    ]
     for url in urls:
         book_infos = parse_one_page(get_one_page(url))
         for book_info in book_infos:

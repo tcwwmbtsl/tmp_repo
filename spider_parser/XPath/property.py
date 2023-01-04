@@ -19,7 +19,7 @@ nodes = html.xpath("//a[contains(@href, 'www')]")
 print("共{}个节点".format(len(nodes)))
 for i in range(0, len(nodes)):
     print(nodes[i].text)
-    
+
 urls = html.xpath("//a[contains(@href, 'www')]/@href")
 for i in range(0, len(urls)):
     print(urls[i])

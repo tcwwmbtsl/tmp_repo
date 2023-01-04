@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # coding=utf-8
-
 """
     一些常用的正则表达式
 """
@@ -19,7 +18,8 @@ result = re.findall(email, 'abcdefg@aa')
 # @ 后面不是域名形式，匹配失败。运行结果：[]
 print(result)
 result = re.findall(
-    email, '我的 email 是 lining@geekori.com , 不是 bill@geekori.cn, 请确认输入email 是否正确')
+    email,
+    '我的 email 是 lining@geekori.com , 不是 bill@geekori.cn, 请确认输入email 是否正确')
 # 运行结果：['lining@geekori.com', 'bill@geekori.cn']
 print(result)
 

@@ -15,17 +15,16 @@ print("共{}个节点".format(len(nodes)))
 print(nodes)
 for i in range(0, len(nodes)):
     print(nodes[i].text, end=" ")
-print("--"*20)
+print("--" * 20)
 
 nodes = html.xpath("//ul//a")
 print("共{}个节点".format(len(nodes)))
 print(nodes)
 for i in range(0, len(nodes)):
     print(nodes[i].text, end=" ")
-print("--"*20)
+print("--" * 20)
 
 # 无法选取 <a> 节点，因为<a> 标签不是<ul> 标签的直接子节点
 nodes = html.xpath("//ul/a")
 print("共{}个节点".format(len(nodes)))
 print(nodes)
-   

@@ -1,10 +1,8 @@
 #!/usr/bin/env python
 # coding=utf-8
 
-
-import multiprocessing 
-import time 
-
+import multiprocessing
+import time
 
 # 定义合局变量
 g_list = list()
@@ -17,9 +15,12 @@ def add_data():
         g_list.append(i)
         print(f"add {i}")
         time.sleep(0.2)
-        
+
+
 def read_data():
-    print("read:",  g_list)
+    print("read:", g_list)
+
+
 # 解决 windows 递归创建进程
 # 1、防止别人导入文件的时候执行 main 里面的代码
 # 2、防止windows 系统递归创建子进程

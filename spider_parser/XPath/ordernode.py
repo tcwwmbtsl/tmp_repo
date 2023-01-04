@@ -5,8 +5,7 @@ from lxml import etree
 from pathlib import Path
 
 html_path = Path(Path(__file__).parent, 'demo.html')
-parser  = etree.HTMLParser()
-
+parser = etree.HTMLParser()
 
 text = '''
 <div>

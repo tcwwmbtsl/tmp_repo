@@ -6,14 +6,17 @@
 # super(要从哪一个类的上一级类开始查找,self).方法名()
 # 子类调用父类的方法时，一般都是想对父类的方法进行扩展
 
+
 class Person():
+
     def __init__(self, name, age):
         self.name = name
         self.age = age
-        
+
     def driver(self):
         print('开车太好玩了,10迈,太快了')
-        
+
+
 class Father(Person):
     # 如果我们现在想在原有父类的方法的基础上扩展，例如我们现在需要重写一个 init 方法
     # 可以接收name, age, gender 三个属性
@@ -22,26 +25,29 @@ class Father(Person):
         super().__init__(name, age)
         # 在父类方法的基础上我们再添加一个子类方法独有的属性
         self.gender = gender
-        
+
     def driver(self):
         print("我要去天安门玩")
-        
+
     def __str__(self):
         return f"我的姓名是{self.name}, 年龄是{self.age}, 我的性别是{self.gender}"
-    
+
+
 class Son(Father):
+
     def driver(self):
         # 调用 Person的 driver
         Person.driver(self)
-        
-        # 从Father 类的上一级类开始查找 
+
+        # 从Father 类的上一级类开始查找
         super(Father, self).driver()
-        
+
         # 调用 Father 中的 driver
         super().driver()
         # 如果类名是当前类可以省略
         super(Son, self).driver()
-        
+
+
 print(Father('Jack', 28, '男'))
 s1 = Son('xiaoming', 12, '男')
 s1.driver()

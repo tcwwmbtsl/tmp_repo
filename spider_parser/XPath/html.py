@@ -10,7 +10,10 @@ html_path = PurePath.joinpath(Path(__file__).parent, 'test.html')
 tree = etree.parse(html_path, parser)
 root = tree.getroot()
 # 将 HMTL 文档转换为可读格式
-result = etree.tostring(root, encoding='utf-8',pretty_print=True, method="html")
+result = etree.tostring(root,
+                        encoding='utf-8',
+                        pretty_print=True,
+                        method="html")
 print(str(result, 'utf-8'))
 # 输出根节点
 print('root:', root.tag)

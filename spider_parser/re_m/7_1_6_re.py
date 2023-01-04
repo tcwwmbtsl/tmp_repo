@@ -1,18 +1,17 @@
 #!/usr/bin/env python
 # coding=utf-8
-
 """
     匹配一些重复的字符串，需要对重复械进行匹配使用符号
     符号：* + 
     其中： * 表示0次到n 次， + 表示一次或多次
 """
 
-import re 
+import re
 
 # 匹配 'a' 'b' 'c' 三个字母按顺序从左到右排列，而且这3个字母都必须至少有一个
 # abc aabc abbbccc 都可以匹配
 s = 'a+b+c+'
-strList =['abc', 'aabc', 'bbabc', 'aabbbccxyz']
+strList = ['abc', 'aabc', 'bbabc', 'aabbbccxyz']
 # 只有 bbabc 无法匹配
 for value in strList:
     m = re.match(s, value)
@@ -21,7 +20,7 @@ for value in strList:
     else:
         print('{}不匹配{}'.format(value, s))
 
-print("*"*20)
+print("*" * 20)
 
 # 匹配任意3个数字- 任意3个小写字母
 # 123-abc 433-zyx 都可以匹配成功
@@ -37,9 +36,9 @@ for value in strList:
         print(m.group())
     else:
         print("{}不匹配{}".format(value, s))
-        
-print("*"*20)        
-        
+
+print("*" * 20)
+
 # 匹配以 a 到 z 的26个字母中任意一个字母作为前缀(也可以没有这个前缀), 后面是至少 1 个数字
 s = '[a-z]?\d+'
 strList = ['1234', 'a123', 'ab432', 'b234abc']
@@ -50,12 +49,15 @@ for value in strList:
         print(m.group())
     else:
         print('{}不匹配{}'.format(value, s))
-        
-print("*"*20) 
 
-# 匹配一个email 
+print("*" * 20)
+
+# 匹配一个email
 email = '\w+@(\w+\.)*\w+\.com'
-emailList = ['abc@126.com', 'test@mail.geekori.com', 'test-abc@geekori.com', 'abc@geekori.com.cn']
+emailList = [
+    'abc@126.com', 'test@mail.geekori.com', 'test-abc@geekori.com',
+    'abc@geekori.com.cn'
+]
 # test-abc@geekori.com 匹配失败，因为 test 和 abc 之间有连字符
 for value in emailList:
     m = re.match(email, value)

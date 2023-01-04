@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # coding=utf-8
-
 """
     使用 findall 和 finditer 查找每一次出现的位置
     findall 函数用于查询字符串中某个正则表达式模式全部的非重复出现情况,与 search 函数类似。

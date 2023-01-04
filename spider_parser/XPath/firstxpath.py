@@ -2,6 +2,7 @@
 # coding=utf-8
 from pathlib import Path, PurePath
 from lxml import etree
+
 parser = etree.HTMLParser()
 html_path = PurePath.joinpath(Path(__file__).parent, "xpath_test.html")
 tree = etree.parse(html_path, parser)
@@ -9,7 +10,7 @@ tree = etree.parse(html_path, parser)
 titles = tree.xpath('/html/head/title')
 if len(titles) > 0:
     print(titles[0].text)
-    
+
 # 定义一段HTML 代码
 html = '''
 <div>
@@ -26,4 +27,4 @@ tree = etree.HTML(html)
 aTags = tree.xpath("//li[@class='item2']")
 if len(aTags) > 0:
     # 得到该 <li> 节点中 <a> 节点的 href 属性值和文本
-    print(aTags[0][0].get('href'),aTags[0][0].text)
+    print(aTags[0][0].get('href'), aTags[0][0].text)

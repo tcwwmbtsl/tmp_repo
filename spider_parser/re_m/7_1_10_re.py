@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # coding=utf-8
-
 """"
     使用sub 和 subn 搜索和替换
 """

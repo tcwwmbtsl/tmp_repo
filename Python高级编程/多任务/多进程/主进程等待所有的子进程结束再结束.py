@@ -2,13 +2,14 @@
 # coding=utf-8
 
 import multiprocessing
-import time 
+import time
 
 
 def task():
     for i in range(10):
         print("任务执行中。。。")
         time.sleep(0.2)
+
 
 # 判断是否直接执行的模块
 if __name__ == "__main__":

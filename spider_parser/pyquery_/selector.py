@@ -1,4 +1,4 @@
-from pyquery import PyQuery as pq 
+from pyquery import PyQuery as pq
 
 html = '''
 <div id="panel">
@@ -34,10 +34,18 @@ doc = pq(requests.get('https://www.jd.com').text)
 # 提取第1个ul 节点
 group1 = doc('#navitems-group1')
 # 输出前4个链接的文本
-print(group1('a')[0].text, group1('a')[1].text, group1('a')[2].text, group1('a')[3].text)
+print(
+    group1('a')[0].text,
+    group1('a')[1].text,
+    group1('a')[2].text,
+    group1('a')[3].text)
 # 输出中间4个链接的文本
 group2 = doc('#navitems-group2')
-print(group2('a')[0].text, group2('a')[1].text, group2('a')[2].text, group2('a')[3].text)
+print(
+    group2('a')[0].text,
+    group2('a')[1].text,
+    group2('a')[2].text,
+    group2('a')[3].text)
 # 输出后两个链接的文本
 group3 = doc('#navitems-group3')
 print(group3('a')[0].text, group3('a')[1].text)

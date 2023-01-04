@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # coding=utf-8
-
 """
    如果待匹配的字符串中,某些字符可以有多个选择,就需要使用字符集
    符号：[] 
@@ -9,7 +8,7 @@
    如果多个字符集写在一起,相当于字符串的连接
     """
 
-import re 
+import re
 
 # 使用字符集，匹配成功
 m = re.match('[ab][cd][ef][gh]', 'adfh')
@@ -40,4 +39,3 @@ m = re.match('abcd|efgh', 'efgh')
 print(m.group())
 # 运行结果：<re.Match object; span=(0, 4), match='efgh'>
 print(m)
-

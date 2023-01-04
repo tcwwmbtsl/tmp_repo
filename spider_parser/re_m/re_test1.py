@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # coding=utf-8
-
 """
 本例演示如何利用match 和 group 方法完成字符串的模式匹配，并输出匹配结果
 """

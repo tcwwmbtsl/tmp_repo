@@ -1,4 +1,5 @@
 from lxml import etree
+
 parser = etree.HTMLParser()
 text = '''
 <html>
@@ -31,14 +32,14 @@ result = html.xpath("//li[1]/ancestor::*")
 print(result)
 for ta in result:
     print(ta.tag, end=" ")
-    
+
 # 使用 ancestor 轴匹配所有class属性值为 item 的祖先节点
 result = html.xpath("//li[1]/ancestor::*[@class='item']")
-print('*'*10)
+print('*' * 10)
 for value in result:
     print(value.tag, end=" ")
-    
-# 使用 attribute 轴获取第4个li节点的所有属性值 
+
+# 使用 attribute 轴获取第4个li节点的所有属性值
 result = html.xpath("//li[4]/attribute::*")
 # 输出 结果
 print()
@@ -48,19 +49,19 @@ print(result)
 result = html.xpath("//li[3]/child::*")
 for value in result:
     print(value.get('href'), value.text, end=" ")
-    
+
 # 使用 descendant 轴获取第2个li节点的所有名为value 的子孙节点
 print("")
 result = html.xpath("//li[2]/descendant::value")
 for value in result:
     print(value.get('url'), end=" ")
-    
+
 # 使用following 轴获取第1个<li> 节点后的所有子节点(包括子孙节点)
 print()
 result = html.xpath("//li[1]/following::*")
 for value in result:
     print(value.tag, end=" ")
-    
+
 # 使用 following 轴获取第1个 <li> 节点后位置大于4的所有子节点
 print()
 result = html.xpath("//li[1]/following::*[position() > 4]")
