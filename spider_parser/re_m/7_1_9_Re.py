@@ -8,7 +8,7 @@
     finditer 函数在功能上与findall 函数类似，只是更节省内存。区别在于 findall 返回一个列表。finditer 返回一个迭代器
 """
 
-import re 
+import re
 # 待匹配字符串
 s = '12-a-abc54-a-xyz---78-A-ytr'
 # 匹配以2个数字开头，结尾是3个小写字母，中间用"-a"分隔的字符串，对大小写敏感
