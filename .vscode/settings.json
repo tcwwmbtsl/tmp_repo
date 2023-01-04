@@ -2,9 +2,9 @@
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
     "pylint.args": ["--errors-only"],
-    "python.linting.pylintArgs": [
-        "--disable=E1101",
-        "--disable=E1121",
-        "--disable=W,C"
-    ],
+    // "python.linting.pylintArgs": [
+    //     "--disable=E1101",
+    //     "--disable=E1121",
+    //     "--disable=W,C"
+    // ],
 }
