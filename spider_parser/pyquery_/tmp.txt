@@ -1,0 +1,4 @@
+url = http://search.dangdang.com/?key=pthon&act=input
+      http://search.dangdang.com/?key=pthon&act=input&page_index=2
+      #p1659728295 > p.name > a
+      
