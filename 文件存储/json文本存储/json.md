@@ -1,0 +1,4 @@
+loads传入一个JSON格式的字符串，解码成python对象
+load 把JSON格式文件，转换成python类型的数据
+dumps 把python类型数据转换成JSON字符串
+dump 把python类型的数据以JSON格式存储到文件中
