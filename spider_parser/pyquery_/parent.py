@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# coding=utf-8
+
 from fileinput import filename
 from pyquery import PyQuery as pq
 from pathlib import Path

@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# coding=utf-8
 from pyquery import PyQuery as pq
 from lxml import etree
 from pathlib import Path

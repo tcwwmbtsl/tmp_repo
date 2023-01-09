@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# coding=utf-8
+
 from pathlib import Path
 
 file_path = Path(Path(__file__).parent, 'test1.txt')

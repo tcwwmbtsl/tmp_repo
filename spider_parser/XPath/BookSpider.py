@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# coding=utf-8
 from lxml import *
 from lxml import etree
 import requests

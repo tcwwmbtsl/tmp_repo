@@ -1,5 +1,3 @@
-from platform import python_branch
-
 #!/usr/bin/env python
 # coding=utf-8
 
