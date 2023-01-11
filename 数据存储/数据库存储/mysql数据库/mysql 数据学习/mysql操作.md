@@ -10,6 +10,14 @@ exit quit Ctrl+D
 show databases;
 2、创建数据库
 create database 数据库名称 charset=utf8;
+创建数据库并指定字符集
+CREATE DATABASE `wangzy_table` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+编码区别：（说明：新建数据库时一般选用 utf8_general_ci 就可以）
+
+utf8_bin:将字符串中的每一个字符用二进制数据存储，区分大小写。
+utf8_genera_ci:不区分大小写，即大小写不敏感。
+utf8_general_cs:区分大小写，即大小写敏感
+utf8_unicode_ci:不能完全支持组合的记号。
 3、使用数据库
 use 数据库名称;
 4、查看当前使用的数据库
