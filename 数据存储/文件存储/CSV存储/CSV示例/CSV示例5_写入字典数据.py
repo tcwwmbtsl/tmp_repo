@@ -27,7 +27,7 @@ rows = [{
     'course_score': 96
 }]
 
-with open(file_path, 'w', encoding='UTF8', newline='') as f:
+with open(file_path, 'w', encoding='utf-8', newline='') as f:
     writer = csv.DictWriter(f, fieldnames=fieldnames)
     writer.writeheader()
     writer.writerows(rows)

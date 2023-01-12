@@ -17,7 +17,7 @@ data = [
     [3, 2, 'English', 96]
 ]
 
-with open(file_path, 'w', encoding='UTF8', newline='') as f:
+with open(file_path, 'w', encoding='utf-8', newline='') as f:
     writer = csv.writer(f)
     # write the header
     writer.writerow(header)
