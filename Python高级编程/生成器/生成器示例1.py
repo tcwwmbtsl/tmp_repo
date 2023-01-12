@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # coding=utf-8
+
 def intNum():
     print('开始执行')
     for i in range(5):
@@ -8,3 +9,4 @@ def intNum():
 
 
 num = intNum()
+print(num)

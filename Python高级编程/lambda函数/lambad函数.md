@@ -1,8 +1,8 @@
 # lambda 语法
 - lambda 函数的语法只包含一个语句，表现形式如下：
     lambda [args1,[args2,argsn]]:expression
-    其中 lambda 是python的保留关键字，arg和expression 由用户自定义
-    args 是参数列表
+    其中 lambda 是python的保留关键字，args 和 expression 由用户自定义
+    args: 是参数列表
     expression: 是一个参数表达式
 # lambda 函数的特性
 - lambda 函数是匿名的：
