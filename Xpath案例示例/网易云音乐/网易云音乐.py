@@ -29,21 +29,27 @@ for i in li:
     path = 'https://music.163.com/song?id=' + song_id
     music_list.append([name, path])
     
-conn = pymysql.connect(host='127.0.0.1', port=3306, user='root', password='1454015651@DS',charset='utf8', database='wangyiyun')
-cursor = conn.cursor()
-# sql_cmd = '''
-#     create table music(
-#         id int not null primary key,
-#         name varchar(50) not null,
-#         url varchar(200) not null
-#     );
-# '''
-# cursor.execute(sql_cmd)
-sql_cmd = 'insert into music(name, url) values(%s, %s);'
+print(music_list)
 for i in music_list:
-    print(i)
-    cursor.execute(sql_cmd, i)
-    conn.commit()
-cursor.close()
-conn.close()
+    music_name, music_rel_url = i
+    song_id = music_rel_url.split('=')[1]
+    music_rel = "http://music.163.com/song/media/outer/url?id=" + song_id
+    print(music_name, music_rel)
+# conn = pymysql.connect(host='127.0.0.1', port=3306, user='root', password='1454015651@DS',charset='utf8', database='wangyiyun')
+# cursor = conn.cursor()
+# # sql_cmd = '''
+# #     create table music(
+# #         id int not null primary key,
+# #         name varchar(50) not null,
+# #         url varchar(200) not null
+# #     );
+# # '''
+# # cursor.execute(sql_cmd)
+# sql_cmd = 'insert into music(name, url) values(%s, %s);'
+# for i in music_list:
+#     print(i)
+#     cursor.execute(sql_cmd, i)
+#     conn.commit()
+# cursor.close()
+# conn.close()
 
